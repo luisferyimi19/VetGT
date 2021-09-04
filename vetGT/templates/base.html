@@ -1,0 +1,201 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'images/vetgt_logo.jpg' %}" rel="shortcut icon" />
+    <link id="theme-link" rel="stylesheet" media="all" type="text/css" href="{% static 'styles/base.css' %}" />
+
+    <title>Vet GT - {% block title %}{% endblock %}</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light rounded" aria-label="Eleventh navbar example">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="/static/images/vetgt_logo.jpg" alt="" width="200" height="24" id="logo">
+                <h5 class="card-title title-vetgt">Vet GT
+                </h5>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{% url 'index' %}">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'brands' %}">Marcas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'services' %}">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'my_pet' %}">Mi Mascota</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'contact' %}">Contacto</a>
+                    </li>
+                </ul>
+                <div class="text-center">
+                    <button id="button" name="button" class="btn btn-light btn-outline-dark btn-lg">Iniciar
+                        Sesión</button>
+                    <button id="button" name="button" class="btn btn-dark btn-outline-light btn-lg">Crear
+                        Cuenta</button>
+
+                </div>
+            </div>
+        </div>
+    </nav>
+    {% block content %}
+    {% endblock %}
+    <!-- Footer -->
+    <footer class="text-center text-lg-start bg-light text-muted">
+        <!-- Section: Social media -->
+        <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+            <!-- Left -->
+            <div class="me-5 d-none d-lg-block">
+                <span>Conéctate con nosotras en las redes sociales</span>
+            </div>
+            <!-- Left -->
+
+            <!-- Right -->
+            <div>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-google"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+            <!-- Right -->
+        </section>
+        <!-- Section: Social media -->
+
+        <!-- Section: Links  -->
+        <section class="">
+            <div class="container text-center text-md-start mt-5">
+                <!-- Grid row -->
+                <div class="row mt-3">
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <!-- Content -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            <i class="fas fa-dog"></i> Vet GT
+                        </h6>
+                        <p>
+                            Más que un sistema somos un grupo de personas que apoyan y motivan el cuidado de las
+                            mascotas.
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Servicios
+                        </h6>
+                        <p>
+                            <a href="{% url 'index' %}" class="text-reset">Inicio</a>
+                        </p>
+                        <p>
+                            <a href="{% url 'brands' %}" class="text-reset">Marcas</a>
+                        </p>
+                        <p>
+                            <a href="{% url 'services' %}" class="text-reset">Servicios</a>
+                        </p>
+                        <p>
+                            <a href="{% url 'my_pet' %}" class="text-reset">Mi Mascota</a>
+                        </p>
+                        <p>
+                            <a href="{% url 'contact' %}" class="text-reset">Contacto</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Contact
+                        </h6>
+                        <p><i class="fas fa-home me-3"></i> Guatemala, Ciudad de Guatemala</p>
+                        <p>
+                            <i class="fas fa-envelope me-3"></i>
+                            vetgt@gmail.com
+                        </p>
+                        <p><i class="fas fa-phone me-3"></i> + 502 3357 - 0444</p>
+                    </div>
+                    <!-- Grid column -->
+                </div>
+                <!-- Grid row -->
+            </div>
+        </section>
+        <!-- Section: Links  -->
+
+        <!-- Copyright -->
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2021 Copyright:
+            <a class="text-reset fw-bold" href="https://ldavilaleon.com/">ldavilaleon.com</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery.lazy.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('img').Lazy();
+        });
+    </script>
+    <script src="js/jquery.lazy.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('img').Lazy();
+        });
+    </script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <!--<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer>-->
+    </script>
+    <script src="js/script.js"></script>
+    <script src="js/emailform.js"></script>
+    <script src="https://kit.fontawesome.com/c63a58a686.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+    <!-- Bootstrap 4.3.1 JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+</body>
+
+</html>

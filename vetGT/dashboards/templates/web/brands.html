@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+{% load thumbnail %}
+
+{% block title %}Marcas{% endblock %}
+
+{% block content %}
+<section class="content_29 bg-light pb-50 pt-80">
+    {% for key, value in companies.items %}
+        {% if not key|divisibleby:2 %}
+            <div class="card brands-webpage-even">
+                <div class="row g-0">
+                    <div class="row g-0">
+                    <div class="col-md-4">
+                    <img src="{{value.0.logo.url}}" class="img-thumbnail brands-images" alt="...">
+                    </div>
+                    <div class="col-md-4">
+                    <div class="card-body">
+                        <h1 class="card-title title-content">{{value.0.company_name}}</h1>
+                        <p class="card-text">{{value.0.description}}</p>
+                        {% if value.0.web_page%}
+                            <a href="{{value.0.web_page}}" class="btn btn-primary btn-lg " tabindex="-1" role="button" aria-disabled="true" target="_blank" >Ir a la pagina</a>
+                        {% endif %}
+                    </div>
+                    </div>  
+                </div>
+            </div>
+        {% else %}
+            <div class="card brands-webpage-odd">
+                <div class="row g-0">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <div class="card-body">
+                                <h1 class="card-title title-content">{{value.0.company_name}}</h1>
+                                <p class="card-text">{{value.0.description}}</p>
+                                {% if value.0.web_page%}
+                                    <a href="{{value.0.web_page}}" class="btn btn-primary btn-lg " tabindex="-1" role="button" aria-disabled="true" target="_blank" >Ir a la pagina</a>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                           <img src="{{value.0.logo.url}}" class="img-thumbnail brands-images" alt="...">
+                        </div>
+                    </div>  
+                </div>
+            </div>
+        {% endif %}
+    {% endfor %}
+</section>
+
+<section class="content_29 bg-light pb-50 pt-80">
+    <div class="card brands-webpage-odd made-with-love">
+        <br><br>
+        <div class="row justify-content-center text-center">
+            <div class="col-xl-9 col-lg-10 aos-init aos-animate" data-aos-duration="700"
+                    data-aos="fade-down" data-aos-delay="0">
+                    <h1 class="card-title title-content">Nuestros productos hechos con amor</h1>
+            </div>
+        </div>
+        <div class="container ">
+            <div class="row row-cols-2">
+                 <div class="col col-protection">
+                    <div class="">
+                        <i class="fas fa-shield-alt icon-made-with-love"></i>
+                    </div>
+                    <div class="">
+                        <h3 class="card-title title-content">Protección de datos</h3>
+                        <p>Vet GT garantiza la protección de todos los datos de tu mascota y los tuyos.</p>
+                    </div>
+                </div>
+                <div class="col col-support">
+                    <div class="with-love">
+                        <i class="fas fa-heart icon-made-with-love"></i>
+                    </div>
+                    <div class="with-love">
+                        <h3 class="card-title title-content">Soporte 24/7</h3>
+                        <p>Nuestro equipo de soporte esta disponible 24/7 para cualquier consulta, solicitud o error que surja.</p>
+                    </div>
+                </div>
+                <div class="col col-advisory">
+                    <div>
+                        <i class="fas fa-coffee icon-made-with-love"></i>
+                    </div>
+                    <div>
+                        <h3 class="card-title title-content">Asesorías gratuitas</h3>
+                        <p>Sabemos lo importante que es para ti tener a tu equipo capacitado sobre el uso de las herramientas tecnologícas de Vet GT por eso mismo 
+                        tendras diversas asesorías gratuitas</p>
+                    </div>
+                </div>
+                <div class="col col-positioning">
+                    <div class="">
+                        <i class="fas fa-map-marker-alt icon-made-with-love"></i>
+                    </div>
+                    <div>
+                        <h3 class="card-title title-content">Posicionamiento estratégico</h3>
+                        <p>Con nuestro posicionamiento estratégico haremos crecer el nombre de tu empresa, también aumentando las ventas y trafico a tu sitio web.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+</section>
+{% endblock %}
