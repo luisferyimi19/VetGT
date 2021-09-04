@@ -1,0 +1,10 @@
+Django==2.2
+psycopg2==2.8.4
+django-model-utils==4.1.1
+ipython==7.23.1
+django-shortcuts==1.6
+sorl-thumbnail==12.7.0
+Pillow==3.2.0
+pycairo==1.19.1
+django-guardian==2.1.0
+python-dateutil==2.5.3

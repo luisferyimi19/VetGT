@@ -1,0 +1,122 @@
+nav{
+    background-color: white !important;
+    box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 5%), inset 0 -1px 0 rgb(0 0 0 / 15%);
+}
+
+.me-auto {
+    margin-right: auto!important;
+    margin-left: auto !important;
+    text-align: center;
+}
+
+#logo{
+    width: 115px;
+    height: 72px;
+}
+
+.title-vetgt{
+    font-weight: 700;
+    font-family: auto;
+    font-size: 2rem;
+}
+
+.card-title{
+    display: contents;
+}
+
+.nav-link{
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: black !important;
+}
+
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover{
+    color: #2196f3 !important;
+}
+
+.container{
+    padding-top: 10px;
+}
+
+.title-content{
+    color: #2196f3 !important;
+}
+
+.img-thumbnail{
+    border: none !important;
+    margin: auto;
+    display: block;
+}
+
+.g-0{
+    display: flex;
+    justify-content: center;
+}
+
+
+.row>*{
+    padding-top: 5px;
+}
+
+.company-name{
+    font-size: 1.3rem;
+}
+
+.offer-alert {
+    color: red;
+}
+
+.card-service{
+    margin: 25px;
+}
+
+.little-image{
+    height: 25px !important;
+    width: 25px !important;
+}
+
+.brands-webpage-odd{
+    background-color: #f8f9fa !important;
+}
+
+.brands-webpage-even{
+    background-color: #ffffff !important;
+}
+
+.brands-images{
+    max-height: 309px !important;
+}
+
+.made-with-love{
+    padding-bottom: 65px;
+}
+
+
+.icon-made-with-love{
+    padding-right: 5px;
+    font-size: 3rem;
+}
+
+.col-protection{
+    border-right-style: solid;
+    border-bottom-style: solid;
+}
+
+.col-positioning{
+    border-top-style: solid;
+    border-left-style: solid;
+}
+
+.col-support{
+    border-bottom-style: solid;
+    border-left-style: solid;
+}
+
+.col-advisory{
+    border-top-style: solid;
+    border-right-style: solid;
+}
+
+.map-contact{
+    display: flex;
+}
