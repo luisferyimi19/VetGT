@@ -14,7 +14,5 @@ from django.db import models
 from django.utils.translation import ugettext as _
 from sorl.thumbnail import ImageField
 from django.core.exceptions import ValidationError
-import hashlib
-import os
 from django.conf import settings
 from django.template.defaultfilters import filesizeformat
