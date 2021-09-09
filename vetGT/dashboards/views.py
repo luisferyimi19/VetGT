@@ -63,7 +63,6 @@ def index(request):
 def brands(request):
     template = loader.get_template('web/brands.html')
     companies = Company.objects.all()
-    count = 0
     company_count = 0
     companies_dict = {}
     for company in companies:
@@ -92,24 +91,39 @@ def my_pet(request):
 
 
 def contact(request):
-    template = loader.get_template('web/contact.html')
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
-            subject = "Website Inquiry"
+            subject = form.cleaned_data['subject_contact']
+            email = form.cleaned_data['email_address_contact']
             body = {
-                'first_name': form.cleaned_data['first_name'],
-                'last_name': form.cleaned_data['last_name'],
-                'email': form.cleaned_data['email_address'],
-                'message': form.cleaned_data['message'],
+                'hello': "Buenos días de parte de Vet GT, acontinuación te detallamos la información de contacto del correo! \n",
+                'contact_info': "Información de contacto:\n",
+                'full_name_contact': "Nombre completo: {}".format(form.cleaned_data['full_name_contact']),
+                'email': "Correo de contacto: {}\n".format(email),
+                'message_contact': "Mensaje: \n{}".format(form.cleaned_data['message_contact']),
             }
             message = "\n".join(body.values())
-
             try:
-                send_mail(subject, message, 'admin@example.com',
-                          ['admin@example.com'])
+                send_mail(subject, message, email,
+                          ['luisdaviladeleon@gmail.com', email], fail_silently=False)
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
-            return redirect("dashboards:homepage")
+            return redirect("contact")
     form = ContactForm()
-    return render(request, template, {'form': form})
+    return render(request, 'web/contact.html', {'form': form})
+
+def login(request):
+    template = loader.get_template('web/login.html')
+    companies = Company.objects.all()
+    company_count = 0
+    companies_dict = {}
+    for company in companies:
+        if company.has_marketing:
+            company_count += 1
+            companies_dict[company_count] = []
+            companies_dict[company_count].append(company)
+    context = {
+        'companies': companies_dict
+    }
+    return HttpResponse(template.render(context, request))

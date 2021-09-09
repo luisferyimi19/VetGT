@@ -89,6 +89,7 @@ nav{
 
 .made-with-love{
     padding-bottom: 65px;
+    background-color: #ffffff !important;
 }
 
 
@@ -119,4 +120,35 @@ nav{
 
 .map-contact{
     display: flex;
+}
+
+#id_full_name_contact{
+    width: 100% !important;
+}
+
+#id_email_address_contact{
+    width: 100% !important;
+}
+
+#id_message_contact{
+    width: 100% !important;
+}
+
+#id_subject_contact{
+    width: 100% !important;
+}
+
+.section-title{
+    color: #2196f3 !important;
+    text-align: center;
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+.g-0{
+    padding: 20px;
+}
+
+.separate-column{
+    padding-left:5px !important;
 }

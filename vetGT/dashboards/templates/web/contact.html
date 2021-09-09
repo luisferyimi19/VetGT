@@ -5,36 +5,47 @@
 
 {% block content %}
 <section class="content_29 bg-light pb-50 pt-80">
-        <div class="card">
-                <div class="row g-0">
-                        <div class="col-md-4">
-                            <h1 class="card-title title-content">Contactanos</h1>
+    <div class="card">
+            <div class="row g-0">
+                    <div class="col-md-4">
+                        <h1 class="card-title title-content">Contactanos</h1>
+                        <br>
+                        <div class="map-contact">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1966355.6621408935!2d-91.35602738540435!3d15.722632048633496!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8588135036e7506b%3A0x35982b375b84d5bb!2sGuatemala!5e0!3m2!1sen!2sgt!4v1630187165193!5m2!1sen!2sgt" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                        <div>
+                            <p><i class="fas fa-home me-3"></i> Guatemala, Ciudad de Guatemala</p>
+                            <p>
+                                <i class="fas fa-envelope me-3"></i>
+                                vetgt@gmail.com
+                            </p>
+                            <p><i class="fas fa-phone me-3"></i> + 502 3357 - 0444</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 separate-column">
+                        <h1 class="card-title title-content">Escribenos</h1>
+                        <form method="post" enctype="multipart/form-data" name="EmailForm">
+                            {% csrf_token %}
+                            {{form.subject_contact.label}}
                             <br>
-                            <div class="map-contact">
-                                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1966355.6621408935!2d-91.35602738540435!3d15.722632048633496!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8588135036e7506b%3A0x35982b375b84d5bb!2sGuatemala!5e0!3m2!1sen!2sgt!4v1630187165193!5m2!1sen!2sgt" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                            </div>
-                            <div>
-                                <p><i class="fas fa-home me-3"></i> Guatemala, Ciudad de Guatemala</p>
-                                <p>
-                                    <i class="fas fa-envelope me-3"></i>
-                                    vetgt@gmail.com
-                                </p>
-                                <p><i class="fas fa-phone me-3"></i> + 502 3357 - 0444</p>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <h1 class="card-title title-content">Escribenos</h1>
-                            <form action=”mailto:luisdaviladeleon@gmail.com” method=”POST” enctype=”multipart/form-data” name=”EmailForm”>
-                                Name:<br>
-                                <input type=”text” size=”19″ name=”ContactName”><br><br>
-                                Message:<br> 
-                                <textarea name=”ContactCommentt” rows=”6″ cols=”20″>
-                                </textarea>
-                                <br><br> 
-                                <input type="submit" value=”Submit”> 
-                            </form>
-                        </div>
-                </div>
-        </div>
+                            {{form.subject_contact}}
+                            <br>
+                            {{form.full_name_contact.label}}
+                            <br>
+                            {{form.full_name_contact}}
+                            <br>
+                            {{form.email_address_contact.label}}
+                            <br>
+                            {{form.email_address_contact}}
+                            <br>
+                            {{form.message_contact.label}}
+                            <br>
+                            {{form.message_contact}}
+                            <br>
+                            <input class="btn btn-primary" type="submit" value="Enviar">
+                        </form>
+                    </div>
+            </div>
+    </div>
 </section>
 {% endblock %}
