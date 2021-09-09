@@ -16,9 +16,11 @@ Including another URLconf
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, path
+from dashboards.views import index
 from django.conf import settings
 
 urlpatterns = [
+    path('', index, name='index'),
     path('dashboards/', include('dashboards.urls')),
     path('admin/', admin.site.urls),
 ]
